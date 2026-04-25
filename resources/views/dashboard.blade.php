@@ -1,0 +1,47 @@
+@extends('layouts.app')
+
+@section('title', 'Dashboard - Sistem Akademik')
+
+@section('content')
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">Dashboard Utama</h5>
+    </div>
+    <div class="card-body">
+        <h4>Selamat Datang, {{ Auth::user()->name }}!</h4>
+        <p class="text-muted mb-4">Silakan pilih menu di bawah ini untuk mengelola data akademik.</p>
+
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card border-primary h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Data Jurusan</h5>
+                        <p class="card-text">Kelola data program studi.</p>
+                        <a href="{{ route('jurusan.index') }}" class="btn btn-outline-primary">Buka Menu</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="card border-success h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Data Mahasiswa</h5>
+                        <p class="card-text">Kelola biodata mahasiswa.</p>
+                        <a href="{{ route('mahasiswa.index') }}" class="btn btn-outline-success">Buka Menu</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="card border-info h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Data Matakuliah</h5>
+                        <p class="card-text">Kelola daftar matakuliah.</p>
+                        <a href="{{ route('matakuliah.index') }}" class="btn btn-outline-info">Buka Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
